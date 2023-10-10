@@ -11,44 +11,45 @@
 <body>
     <header>
         <!--Menu-->
-        <nav >
-            <div>
-                <img src="img/logo.png" alt="Logo"/>
-                <ul >
-                    <li ><a href="index.html" class="Seleccionado">Inicio</a></li>
-                    <li><a href="quien.html">Quien soy</a></li>
-                    <li><a href="portafolio.html">PortaFolio</a></li>
-                    <li><a href="blog.html">blog</a></li>
-                    <li><a href="contacto.html">Contactos</a></li>
+        <nav id="navbar">
+            <div class="contenedor">
+                <img src="img/logo.png" alt="Logo" class="logotipo"/>
+                <ul class="textoBoton" >
+                    <li><a href="index.php" class="Seleccionado">Inicio</a></li>
+                    <li><a href="quien.php">Quien soy</a></li>
+                    <li><a href="portafolio.php">PortaFolio</a></li>
+                    <li><a href="pedidos.php">Pedidos</a></li>
+                    <li><a href="blog.php">blog</a></li>
+                    <li><a href="contacto.php">Contactos</a></li>
+                    <li><a class="sesion" href="">Iniciar sesión</a></li>
                 </ul>          
             </div>
         </nav> 
-       <div>
-        <div>
-           <h1>Rigoberto Pérez Ovando</h1> 
-           <p >Ingeniero de software</p>
+       <div id="mostrarSlider">
+        <div class="Slider-banner">
+            <h1>Rigoberto Pérez Ovando</h1> 
+            <p class="large">Ingeniero de software</p>
         </div>
        </div>
    </header>
   
-   <section >
-       <div >
-           <div >
-               <ul >
+   <section id="Portafolio">
+       <div class="Contenedor">
+           <div class="portafolio-nav">
+               <ul class="textoBoton">
                     <li><a href="">Web</a></li>
                     <li><a href="">Móvil</a></li>
                     <li><a href="">Escritorio</a></li>
-                    <li><a href="">Diseños</a></li>
                </ul>
            </div>
        </div>
-       <div>
-            <div >
+       <div class="Portafolio-content">
+            <div class="Caja">
                 <a href="http://">
-                    <img src="img/web.jpg" alt="web">
+                    <img src="img/web.png" alt="web">
+                    <p>Sitio punto de venta</p>
                 </a>               
             </div>
-           
        </div>
    </section>
   
