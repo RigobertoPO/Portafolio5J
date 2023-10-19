@@ -1,6 +1,6 @@
 <?php
 class Conexion extends PDO{  //Conexion segura
-    private $hostBd='localhost';
+    private $hostBd='localhost:3306';
     private $nombreBd='portafolio';
     private $usuarioBd='root';
     private $passwordBd='';

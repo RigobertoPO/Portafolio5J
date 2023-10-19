@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if(isset($_SESSION["correoUsuario"])){
+        $correoUsuario= $_SESSION["correoUsuario"];
+        $tipoUsuario= $_SESSION["tipoUsuario"];
+    }
+    else{
+        $correoUsuario= '';
+        $tipoUsuario= '';
+    }  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +28,28 @@
                 <ul class="textoBoton" >
                     <li><a href="../index.php" class="Seleccionado">Inicio</a></li>
                     <li><a href="../quien.php">Quien soy</a></li>
-                    <li><a href="portafolio.php">PortaFolio</a></li>
-                    <li><a href="pedidos.php">Pedidos</a></li>
+                    <?php
+                    if(($correoUsuario!='') && $tipoUsuario==1)
+                    {
+                       echo '<li><a href="portafolio.php">PortaFolio</a></li>';
+                       echo '<li><a href="pedidos.php">Pedidos</a></li>';
+                    }
+                    ?>
                     <li><a href="../blog.php">blog</a></li>
                     <li><a href="../contacto.php">Contactos</a></li>
-                    <li><a class="sesion" href="">Iniciar sesión</a></li>
+                    <li>
+                        <?php
+                        if($correoUsuario==''){
+                            echo ' <a class="sesion" 
+                            href="../login.php">Iniciar sesión</a>';
+                        }
+                        else{
+                            echo '<p>'.$correoUsuario.'</p>';
+                            echo '<a class="sesion" 
+                            href="../cerrarSesion.php">Cerrar Sesión</a>';
+                        }
+                        ?> 
+                    </li>
                 </ul>          
             </div>
         </nav> 
