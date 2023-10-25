@@ -47,7 +47,7 @@
                   </div>
                 </form>
                  <a class="small text-muted" href="#!">Forgot password?</a>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">¿No tienes una cuenta? <a href="#!"
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">¿No tienes una cuenta? <a href="usuarios/registrarusuario.php"
                       style="color: #393f81;">Registrate aquí</a></p>
                   <a href="#!" class="small text-muted">Terms of use.</a>
                   <a href="#!" class="small text-muted">Privacy policy</a>
