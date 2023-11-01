@@ -5,7 +5,7 @@
     $usuario=new Usuario();
     if(isset($correo)&& isset($password)){
         $resultado=$usuario->
-        AutenticarUsuario($correo,$password);
+        AutenticarUsuario($correo,MD5($password));
         if(count($resultado)>0){
             foreach($resultado as $item){
                 session_start();

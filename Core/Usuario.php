@@ -18,7 +18,7 @@
             include '../conexion.php';
             $conectar= new Conexion();
             $consulta=$conectar->prepare("INSERT INTO 
-            usuario(NombreCompleto,CorreoElectronico,Password,
+            usuarios(NombreCompleto,CorreoElectronico,Password,
             Tipo,FechaRegistro) VALUES(:nombreCompleto,:correo,
             :password,:tipo,NOW())");
             $consulta->bindParam(":nombreCompleto",$nombreCompleto,PDO::PARAM_STR);
@@ -48,6 +48,14 @@
             $consulta->bindParam(":id",$id,PDO::PARAM_INT);
             $consulta->execute();
             return true;
+        }
+        public function ObtenerUsuarios(){
+            include '../conexion.php';
+            $conectar= new Conexion();
+            $consulta=$conectar->prepare('SELECT * FROM usuarios');
+            $consulta->execute();
+            $consulta->setFetchMode(PDO::FETCH_ASSOC);
+            return $consulta->fetchAll();
         }
     }
 ?>
