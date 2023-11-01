@@ -62,15 +62,46 @@
    </header>
   
    <section id="Portafolio">
+        <a href="nuevousuario.php" class="btn btn-primary">nuevo</a>
         <div>
-            <?php
-                include_once '../Core/Usuario.php';
-                $user=new Usuario();
-                $resultado=$user->ObtenerUsuarios();
-                foreach ($resultado as $item) {
-                    echo $item['NombreCompleto'];
-                }
-            ?>
+            <table class="table table-light">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Tipo</th>
+                        <th></th>
+                        <th></th>
+                    <tr>
+                </thead>
+                <tbody>
+                    <?php
+                    include_once '../Core/Usuario.php';
+                    $user=new Usuario();
+                    $resultado=$user->ObtenerUsuarios();
+                    foreach ($resultado as $item) {
+                        echo '<tr>';
+                        echo '<td>'.$item['Id'].'</td>';
+                        echo '<td>'.$item['NombreCompleto'].'</td>';
+                        echo '<td>'.$item['CorreoElectronico'].'</td>';
+                        switch ($item['Tipo']){
+                            case 1:
+                                echo '<td>Administrador</td>';
+                                break;
+                            case 2:
+                                echo '<td>Cliente</td>';
+                                break;  
+                        }
+                        echo '<td><a href="eliminarusuario.php?id='.$item['Id'].'"><img src="../img/Eliminar.png"/></a></td>';
+                        echo '<td><a href="editarusuario.php?id='.$item['Id'].'"><img src="../img/Editar.png"/></a></td>';
+                        echo '</tr>';
+
+                    }
+                    ?>
+                </tbody>
+            </table>
+           
         </div>
    </section>
   
